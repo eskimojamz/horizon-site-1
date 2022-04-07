@@ -1,0 +1,139 @@
+.root {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition-property: all;
+  transition-duration: 0.3s;
+  min-width: 0;
+  min-height: 0;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  margin-top: calc(0px - 16px);
+  height: calc(100% + 16px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 16px;
+}
+.recentListingImgBlock {
+  width: 100%;
+  height: 265px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: none;
+  min-width: 0;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+.img___9Y9Zg {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.img___9Y9Zg > picture > img {
+  object-fit: cover;
+}
+.img___9Y9Zg > .__wab_img-spacer > img {
+  object-fit: cover;
+}
+.recentListingBottom {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 0;
+}
+.recentListingInfo {
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  display: flex;
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.recentListingInfo > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: center;
+  margin-top: calc(0px - 6px);
+  height: calc(100% + 6px);
+}
+.recentListingInfo > :global(.__wab_flex-container) > *,
+.recentListingInfo > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.recentListingInfo > :global(.__wab_flex-container) > picture > img,
+.recentListingInfo
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 6px;
+}
+.price {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+}
+.slotTargetPrice {
+  font-family: Overlock;
+  font-size: 26px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  line-height: 100%;
+  letter-spacing: 0em;
+}
+.address {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+}
+.slotTargetAddress {
+  font-family: Overlock;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  line-height: 100%;
+  letter-spacing: 0em;
+}
+.details {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+}
+.slotTargetDetails {
+  font-family: Overlock;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(114, 114, 114, 1);
+  line-height: 100%;
+  letter-spacing: 0em;
+}
+.recentListingBtn:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  align-self: flex-end;
+}

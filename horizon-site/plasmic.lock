@@ -1,0 +1,149 @@
+{
+  "projects": [
+    {
+      "projectId": "akQUwPYY2eStENCEGYmmQw",
+      "version": "latest",
+      "dependencies": {},
+      "lang": "js",
+      "fileLocks": [
+        {
+          "type": "globalVariant",
+          "assetId": "HKdOJWx6MIWhf",
+          "checksum": "4f79bc42bb7cd8ce0124f30989e3cfae"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "255ZHLsJKg6A",
+          "checksum": "7acdca2e4c9e6952a28d50dc093909da"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "255ZHLsJKg6A",
+          "checksum": "7acdca2e4c9e6952a28d50dc093909da"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "STXems54UcG",
+          "checksum": "2450b5705a19dbdb1d7ea9ef2e26052b"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "STXems54UcG",
+          "checksum": "2450b5705a19dbdb1d7ea9ef2e26052b"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "w1_vCJeiHk",
+          "checksum": "dcb58a0ce519ae8efef822dca1e22611"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "w1_vCJeiHk",
+          "checksum": "dcb58a0ce519ae8efef822dca1e22611"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "j7fyymFTtU",
+          "checksum": "0a4d2eda4e99937deb2349fa2771c0d7"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "j7fyymFTtU",
+          "checksum": "0a4d2eda4e99937deb2349fa2771c0d7"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "r83GzkdYS5",
+          "checksum": "ae3e4cfa706083c6ad5bf295d93cf94a"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "r83GzkdYS5",
+          "checksum": "ae3e4cfa706083c6ad5bf295d93cf94a"
+        },
+        {
+          "type": "icon",
+          "assetId": "kxgRTdr1ZWq",
+          "checksum": "69e472b0c6b0a73495b6e30046f2e626"
+        },
+        {
+          "type": "icon",
+          "assetId": "KrAMUujs7c6",
+          "checksum": "8f99b7f13eb7ecc14d32580aa5407b4c"
+        },
+        {
+          "type": "icon",
+          "assetId": "ooIjCrrKHKd",
+          "checksum": "d799da46b1a7534ab720b93472b8342d"
+        },
+        {
+          "type": "icon",
+          "assetId": "FmpEjbLnUWi",
+          "checksum": "435e41603f05ed10e8530ea53d38381d"
+        },
+        {
+          "type": "image",
+          "assetId": "vXHXE9yzi",
+          "checksum": "23604ce02546660d352e3001d56ae8ae"
+        },
+        {
+          "type": "image",
+          "assetId": "jrZB7VUWvh",
+          "checksum": "1046de337724a43d233e3cf282699091"
+        },
+        {
+          "type": "image",
+          "assetId": "MdgIHmcfg",
+          "checksum": "1c7211f2b6a7d9b27bf397ac09ac01cd"
+        },
+        {
+          "type": "image",
+          "assetId": "D8hw0OrBqB",
+          "checksum": "6bbf98f7643473fe9fdaf5952f48f7a8"
+        },
+        {
+          "type": "image",
+          "assetId": "CLjc-tuzIx",
+          "checksum": "b140719d50407ae73641efdfe8f45374"
+        },
+        {
+          "type": "image",
+          "assetId": "XvH808bzIP",
+          "checksum": "771f06b70220bd4e03468da36c47543d"
+        },
+        {
+          "type": "image",
+          "assetId": "xnTJh49dHT",
+          "checksum": "9459e6c456cd6991126b4e2eddeb5e61"
+        },
+        {
+          "type": "image",
+          "assetId": "wpPyzWaIuM",
+          "checksum": "09cf05604616db3d19f4b8512c8fba18"
+        },
+        {
+          "type": "image",
+          "assetId": "TsBdaao-zc",
+          "checksum": "fb105de82182298ab0631412b4c512d0"
+        },
+        {
+          "type": "image",
+          "assetId": "DsgOiqpvLcS",
+          "checksum": "d44af14aa61d9e73af09c3ce627aba93"
+        },
+        {
+          "type": "image",
+          "assetId": "wkfjbuWd6",
+          "checksum": "53c37e53eac3c4bc9342401b0b2e53a7"
+        },
+        {
+          "assetId": "akQUwPYY2eStENCEGYmmQw",
+          "type": "projectCss",
+          "checksum": "e9a1c09d16dba046b2738691b2716052"
+        }
+      ],
+      "codegenVersion": "0.0.1"
+    }
+  ],
+  "cliVersion": "0.1.176"
+}
