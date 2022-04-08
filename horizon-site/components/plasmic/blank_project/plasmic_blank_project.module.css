@@ -41,6 +41,21 @@
   --plasmic-token-secondary-light: var(--token-DFnTX2cfP);
   --token-09GIg-Ly5: #f2f5ff;
   --plasmic-token-blue-light: var(--token-09GIg-Ly5);
+  --token-TRPbYrtYa: transparent;
+  --plasmic-token-transparent: var(--token-TRPbYrtYa);
+  --token-qo9kurJaN: #ffc043;
+  --plasmic-token-unnamed-style-token-5: var(--token-qo9kurJaN);
+  --token-RmPZ_cJqM: #e4e4e4;
+  --plasmic-token-grey-very-light: var(--token-RmPZ_cJqM);
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+  .plasmic_tokens {
+    --token-qo9kurJaN: #ffc0434d;
+    --plasmic-token-unnamed-style-token-5: var(--token-qo9kurJaN);
+    --token-RmPZ_cJqM: #f2f2f2;
+    --plasmic-token-grey-very-light: var(--token-RmPZ_cJqM);
+  }
 }
 
 .plasmic_default_styles {
@@ -69,13 +84,13 @@
   --mixin-rHG6vOVBVdQJ_letter-spacing: -1px;
   --mixin-rHG6vOVBVdQJ_line-height: 1.1;
   --mixin-3f_v3XU5JXgr_color: #0070f3;
-  --mixin-kUNtEhln0lb1_font-family: "Inter";
+  --mixin-kUNtEhln0lb1_font-family: "Overlock";
   --mixin-kUNtEhln0lb1_color: #000000;
   --mixin-kUNtEhln0lb1_font-size: 32px;
   --mixin-kUNtEhln0lb1_font-weight: 600;
   --mixin-kUNtEhln0lb1_letter-spacing: -0.8px;
   --mixin-kUNtEhln0lb1_line-height: 1.2;
-  --mixin-jzPIQDwItvYz_font-family: "Inter";
+  --mixin-jzPIQDwItvYz_font-family: "Overlock";
   --mixin-jzPIQDwItvYz_color: #000000;
   --mixin-jzPIQDwItvYz_font-size: 24px;
   --mixin-jzPIQDwItvYz_font-weight: 600;
@@ -146,13 +161,13 @@
   --mixin-SJ6cE-GvfB7t3_padding-left: 40px;
   --mixin-SJ6cE-GvfB7t3_position: relative;
   --mixin-SJ6cE-GvfB7t3_list-style-type: decimal;
-  --mixin-0FzdeHEx7ShMX_font-family: "Inter";
+  --mixin-0FzdeHEx7ShMX_font-family: "Overlock";
   --mixin-0FzdeHEx7ShMX_color: #000000;
   --mixin-0FzdeHEx7ShMX_font-size: 20px;
   --mixin-0FzdeHEx7ShMX_font-weight: 600;
   --mixin-0FzdeHEx7ShMX_letter-spacing: -0.3px;
   --mixin-0FzdeHEx7ShMX_line-height: 1.5;
-  --mixin-D1SXU9ocrZAxY_font-family: "Inter";
+  --mixin-D1SXU9ocrZAxY_font-family: "Overlock";
   --mixin-D1SXU9ocrZAxY_color: #000000;
   --mixin-D1SXU9ocrZAxY_font-size: 16px;
   --mixin-D1SXU9ocrZAxY_font-weight: 600;

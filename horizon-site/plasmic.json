@@ -93,6 +93,84 @@
           "cssFilePath": "plasmic/blank_project/PlasmicButton.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "JkywaSAd1fF",
+          "name": "Navbar",
+          "type": "managed",
+          "projectId": "akQUwPYY2eStENCEGYmmQw",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicNavbar.jsx",
+          "importSpec": {
+            "modulePath": "Navbar.jsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicNavbar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Jgo1m2OV7s",
+          "name": "NavLink",
+          "type": "managed",
+          "projectId": "akQUwPYY2eStENCEGYmmQw",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicNavLink.jsx",
+          "importSpec": {
+            "modulePath": "NavLink.jsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicNavLink.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "vGOs3aFqqn",
+          "name": "CommunitiesCard",
+          "type": "managed",
+          "projectId": "akQUwPYY2eStENCEGYmmQw",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicCommunitiesCard.jsx",
+          "importSpec": {
+            "modulePath": "CommunitiesCard.jsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicCommunitiesCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Ou_f7MnAVP",
+          "name": "TestimonialTop",
+          "type": "managed",
+          "projectId": "akQUwPYY2eStENCEGYmmQw",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicTestimonialTop.jsx",
+          "importSpec": {
+            "modulePath": "TestimonialTop.jsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicTestimonialTop.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "lJBkLAW_9b",
+          "name": "TestimonialBottom",
+          "type": "managed",
+          "projectId": "akQUwPYY2eStENCEGYmmQw",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicTestimonialBottom.jsx",
+          "importSpec": {
+            "modulePath": "TestimonialBottom.jsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicTestimonialBottom.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "4-SUUavd_8",
+          "name": "MobileMenu",
+          "type": "managed",
+          "projectId": "akQUwPYY2eStENCEGYmmQw",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicMobileMenu.jsx",
+          "importSpec": {
+            "modulePath": "MobileMenu.jsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicMobileMenu.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -115,6 +193,31 @@
           "id": "FmpEjbLnUWi",
           "name": "IconIcon",
           "moduleFilePath": "plasmic/blank_project/icons/PlasmicIcon__Icon.jsx"
+        },
+        {
+          "id": "bZclPKZqMw",
+          "name": "Icon2Icon",
+          "moduleFilePath": "plasmic/blank_project/icons/PlasmicIcon__Icon2.jsx"
+        },
+        {
+          "id": "QgqDHC7Rat",
+          "name": "Icon3Icon",
+          "moduleFilePath": "plasmic/blank_project/icons/PlasmicIcon__Icon3.jsx"
+        },
+        {
+          "id": "mc2OAX1cPR",
+          "name": "Icon4Icon",
+          "moduleFilePath": "plasmic/blank_project/icons/PlasmicIcon__Icon4.jsx"
+        },
+        {
+          "id": "xoM04iIoPh",
+          "name": "Icon5Icon",
+          "moduleFilePath": "plasmic/blank_project/icons/PlasmicIcon__Icon5.jsx"
+        },
+        {
+          "id": "0hTDVlwpCG",
+          "name": "Icon6Icon",
+          "moduleFilePath": "plasmic/blank_project/icons/PlasmicIcon__Icon6.jsx"
         }
       ],
       "images": [
@@ -172,6 +275,51 @@
           "id": "wkfjbuWd6",
           "name": "new-york-orange.png",
           "filePath": "../public/plasmic/blank_project/images/newYorkOrangepng.png"
+        },
+        {
+          "id": "2gOahyjTaa",
+          "name": "image",
+          "filePath": "../public/plasmic/blank_project/images/image.svg"
+        },
+        {
+          "id": "oc0GfFpYlk",
+          "name": "image 2",
+          "filePath": "../public/plasmic/blank_project/images/image2.svg"
+        },
+        {
+          "id": "8JrvkpLjp",
+          "name": "juan-karmy-tedvPmabw1s-unsplash.jpg",
+          "filePath": "../public/plasmic/blank_project/images/juanKarmyTedvPmabw1SUnsplashjpg.jpeg"
+        },
+        {
+          "id": "4uzpjrp8b",
+          "name": "QueensSm.png",
+          "filePath": "../public/plasmic/blank_project/images/queensSmpng.png"
+        },
+        {
+          "id": "pOX3aKYsN",
+          "name": "image 3",
+          "filePath": "../public/plasmic/blank_project/images/image3.svg"
+        },
+        {
+          "id": "hUMHohgVx",
+          "name": "8a74c02c81f0382e8df5f818f97350a7-uncropped_scaled_within_1536_1152.jpeg",
+          "filePath": "../public/plasmic/blank_project/images/_8A74C02C81F0382E8Df5F818F97350A7UncroppedScaledWithin15361152Jpeg.jpeg"
+        },
+        {
+          "id": "UOKGxAdVQ",
+          "name": "0d70f9336c9576f96268232877f8e82d-uncropped_scaled_within_1536_1152.jpeg",
+          "filePath": "../public/plasmic/blank_project/images/_0D70F9336C9576F96268232877F8E82DUncroppedScaledWithin15361152Jpeg.jpeg"
+        },
+        {
+          "id": "MeI8Nf8ak",
+          "name": "a3b375be83856de842b80c75ba173d74-cc_ft_768.jpeg",
+          "filePath": "../public/plasmic/blank_project/images/a3B375Be83856De842B80C75Ba173D74CcFt768Jpeg.jpeg"
+        },
+        {
+          "id": "2MshfkyRe",
+          "name": "ralph-ravi-kayden-2d4lAQAlbDA-unsplash.jpg",
+          "filePath": "../public/plasmic/blank_project/images/ralphRaviKayden2D4LAqAlbDaUnsplashjpg.jpeg"
         }
       ],
       "indirect": false,

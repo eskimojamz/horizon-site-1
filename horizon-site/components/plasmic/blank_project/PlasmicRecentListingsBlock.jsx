@@ -13,9 +13,11 @@ import * as p from "@plasmicapp/react-web";
 import {
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts
+  deriveRenderOpts,
+  ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import RecentListing from "../../RecentListing"; // plasmic-import: w1_vCJeiHk/component
+import { useScreenVariants as useScreenVariantshKdOjWx6MiWhf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: HKdOJWx6MIWhf/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_blank_project.module.css"; // plasmic-import: akQUwPYY2eStENCEGYmmQw/projectcss
 import sty from "./PlasmicRecentListingsBlock.module.css"; // plasmic-import: j7fyymFTtU/css
@@ -26,6 +28,10 @@ export const PlasmicRecentListingsBlock__ArgProps = new Array("children");
 
 function PlasmicRecentListingsBlock__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantshKdOjWx6MiWhf()
+  });
+
   return (
     <p.Stack
       as={"div"}

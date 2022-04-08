@@ -12,18 +12,26 @@ import * as React from "react";
 import Link from "next/link";
 import * as p from "@plasmicapp/react-web";
 import {
+  hasVariant,
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts
+  deriveRenderOpts,
+  ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Navbar from "../../Navbar"; // plasmic-import: JkywaSAd1fF/component
 import Button from "../../Button"; // plasmic-import: r83GzkdYS5/component
 import RecentListingsBlock from "../../RecentListingsBlock"; // plasmic-import: j7fyymFTtU/component
 import RecentListing from "../../RecentListing"; // plasmic-import: w1_vCJeiHk/component
 import TextInput from "../../TextInput"; // plasmic-import: STXems54UcG/component
+import CommunitiesCard from "../../CommunitiesCard"; // plasmic-import: vGOs3aFqqn/component
+import TestimonialTop from "../../TestimonialTop"; // plasmic-import: Ou_f7MnAVP/component
+import TestimonialBottom from "../../TestimonialBottom"; // plasmic-import: lJBkLAW_9b/component
+import { useScreenVariants as useScreenVariantshKdOjWx6MiWhf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: HKdOJWx6MIWhf/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_blank_project.module.css"; // plasmic-import: akQUwPYY2eStENCEGYmmQw/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: 255ZHLsJKg6A/css
-import CallIcon from "./icons/PlasmicIcon__Call"; // plasmic-import: kxgRTdr1ZWq/icon
+import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 0hTDVlwpCG/icon
+import Icon4Icon from "./icons/PlasmicIcon__Icon4"; // plasmic-import: mc2OAX1cPR/icon
 
 export const PlasmicHomepage__VariantProps = new Array();
 
@@ -31,6 +39,10 @@ export const PlasmicHomepage__ArgProps = new Array();
 
 function PlasmicHomepage__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantshKdOjWx6MiWhf()
+  });
+
   return (
     <React.Fragment>
       <style>{`
@@ -57,170 +69,48 @@ function PlasmicHomepage__RenderFunc(props) {
           )}
         >
           <div
-            data-plasmic-name={"home2Desktop"}
-            data-plasmic-override={overrides.home2Desktop}
-            className={classNames(projectcss.all, sty.home2Desktop)}
+            data-plasmic-name={"wrapper"}
+            data-plasmic-override={overrides.wrapper}
+            className={classNames(projectcss.all, sty.wrapper)}
           >
             <div
-              data-plasmic-name={"heroContainer"}
-              data-plasmic-override={overrides.heroContainer}
-              className={classNames(projectcss.all, sty.heroContainer)}
+              data-plasmic-name={"hero"}
+              data-plasmic-override={overrides.hero}
+              className={classNames(projectcss.all, sty.hero)}
             >
-              <div
+              <Navbar
                 data-plasmic-name={"navbar"}
                 data-plasmic-override={overrides.navbar}
-                className={classNames(projectcss.all, sty.navbar)}
-              >
-                <p.Stack
-                  as={"div"}
-                  data-plasmic-name={"logoContainer"}
-                  data-plasmic-override={overrides.logoContainer}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.logoContainer)}
-                >
-                  <p.PlasmicImg
-                    alt={""}
-                    className={classNames(sty.img__qa5Ct)}
-                    displayHeight={"36px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"36px"}
-                    loading={"lazy"}
-                    src={"/plasmic/blank_project/images/logo.svg"}
-                  />
+                className={classNames("__wab_instance", sty.navbar)}
+              />
 
-                  <div
-                    data-plasmic-name={"textLogo"}
-                    data-plasmic-override={overrides.textLogo}
-                    className={classNames(projectcss.all, sty.textLogo)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__tdWxh
-                      )}
-                    >
-                      {"Horizon Development"}
-                    </div>
-                  </div>
-                </p.Stack>
-
+              {(
+                hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? true
+                  : hasVariant(globalVariants, "screen", "desktop")
+                  ? true
+                  : true
+              ) ? (
                 <div
-                  data-plasmic-name={"navLinksContainer"}
-                  data-plasmic-override={overrides.navLinksContainer}
-                  className={classNames(projectcss.all, sty.navLinksContainer)}
+                  data-plasmic-name={"mobileMenuIcon"}
+                  data-plasmic-override={overrides.mobileMenuIcon}
+                  className={classNames(projectcss.all, sty.mobileMenuIcon)}
                 >
-                  <p.Stack
-                    as={"div"}
-                    data-plasmic-name={"navLinks"}
-                    data-plasmic-override={overrides.navLinks}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.navLinks)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__te3Tm)}
-                    >
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          sty.link__ksCvb
-                        )}
-                        component={Link}
-                        platform={"nextjs"}
-                      >
-                        {"Communities"}
-                      </p.PlasmicLink>
-                    </div>
-
-                    <div
-                      data-plasmic-name={"link2"}
-                      data-plasmic-override={overrides.link2}
-                      className={classNames(projectcss.all, sty.link2)}
-                    >
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          sty.link___05Dk
-                        )}
-                        component={Link}
-                        platform={"nextjs"}
-                      >
-                        {"Agents"}
-                      </p.PlasmicLink>
-                    </div>
-
-                    <div
-                      data-plasmic-name={"link3"}
-                      data-plasmic-override={overrides.link3}
-                      className={classNames(projectcss.all, sty.link3)}
-                    >
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          sty.link__kzdKx
-                        )}
-                        component={Link}
-                        platform={"nextjs"}
-                      >
-                        {"About Us"}
-                      </p.PlasmicLink>
-                    </div>
-
-                    <div
-                      data-plasmic-name={"link4"}
-                      data-plasmic-override={overrides.link4}
-                      className={classNames(projectcss.all, sty.link4)}
-                    >
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          sty.link__s8K6P
-                        )}
-                        component={Link}
-                        platform={"nextjs"}
-                      >
-                        {"Contact"}
-                      </p.PlasmicLink>
-                    </div>
-                  </p.Stack>
-                </div>
-
-                <p.Stack
-                  as={"div"}
-                  data-plasmic-name={"phoneLink"}
-                  data-plasmic-override={overrides.phoneLink}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.phoneLink)}
-                >
-                  <CallIcon
+                  <p.PlasmicIcon
                     data-plasmic-name={"svg"}
                     data-plasmic-override={overrides.svg}
+                    PlasmicIconType={
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? Icon6Icon
+                        : hasVariant(globalVariants, "screen", "desktop")
+                        ? Icon6Icon
+                        : Icon6Icon
+                    }
                     className={classNames(projectcss.all, sty.svg)}
                     role={"img"}
                   />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ifOk
-                    )}
-                  >
-                    {"718-3322-3232"}
-                  </div>
-                </p.Stack>
-              </div>
+                </div>
+              ) : null}
 
               <p.Stack
                 as={"div"}
@@ -274,9 +164,9 @@ function PlasmicHomepage__RenderFunc(props) {
                       sty.horizonDevelopmentHasHelpedNewYorkersFindAHomeTheyLoveWeGuaranteeThatWellFindSomethingGreatForYou
                     )}
                   >
-                    {
-                      "Horizon Development helps \nNew Yorkers find a home they love. \nWe guarantee we’ll find \nsomething perfect for you. "
-                    }
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Horizon Development helps \nNew Yorkers find a home they love. \nWe guarantee we’ll find \nsomething perfect for you. "
+                      : "Horizon Development helps \nNew Yorkers find a home they love. \nWe guarantee we’ll find \nsomething perfect for you. "}
                   </div>
                 </div>
 
@@ -304,6 +194,16 @@ function PlasmicHomepage__RenderFunc(props) {
                   </Button>
                 </div>
               </p.Stack>
+
+              {(
+                hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+              ) ? (
+                <div
+                  data-plasmic-name={"heroMobileGradient"}
+                  data-plasmic-override={overrides.heroMobileGradient}
+                  className={classNames(projectcss.all, sty.heroMobileGradient)}
+                />
+              ) : null}
             </div>
 
             <p.Stack
@@ -364,31 +264,83 @@ function PlasmicHomepage__RenderFunc(props) {
                     )}
                   >
                     <RecentListing
-                      address={"56-27 Cloverdale Blvd, Bayside"}
                       className={classNames(
                         "__wab_instance",
-                        sty.recentListing__dOnMv
+                        sty.recentListing__uZidy
                       )}
-                      price={"$ 1,300,000"}
-                      imageSrc='https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+                      recentListingImg={
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img__nKeCt)}
+                          displayHeight={"100%"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"100%"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/blank_project/images/genMid1.jpeg",
+                            fullWidth: 623,
+                            fullHeight: 414,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      }
                     />
 
                     <RecentListing
-                      address={"56-27 Cloverdale Blvd, Bayside"}
                       className={classNames(
                         "__wab_instance",
-                        sty.recentListing__dbEKh
+                        sty.recentListing__ilvfy
                       )}
-                      price={"$ 1,300,000"}
+                      price={"$ 1,100,000"}
+                      recentListingImg={
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img___3GY7U)}
+                          displayHeight={"100%"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"100%"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/blank_project/images/ralphRaviKayden2D4LAqAlbDaUnsplashjpg.jpeg",
+                            fullWidth: 1920,
+                            fullHeight: 1280,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      }
                     />
 
                     <RecentListing
-                      address={"56-27 Cloverdale Blvd, Bayside"}
                       className={classNames(
                         "__wab_instance",
-                        sty.recentListing___8ItQc
+                        sty.recentListing__b5WyQ
                       )}
-                      price={"$ 1,300,000"}
+                      price={"$1,200,000"}
+                      recentListingImg={
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img__hz9Nb)}
+                          displayHeight={"100%"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"100%"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/blank_project/images/a3B375Be83856De842B80C75Ba173D74CcFt768Jpeg.jpeg",
+                            fullWidth: 768,
+                            fullHeight: 576,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      }
                     />
                   </RecentListingsBlock>
                 </p.Stack>
@@ -397,15 +349,17 @@ function PlasmicHomepage__RenderFunc(props) {
 
             <p.Stack
               as={"div"}
-              data-plasmic-name={"heroInfoWrapper"}
-              data-plasmic-override={overrides.heroInfoWrapper}
+              data-plasmic-name={"heroInfo"}
+              data-plasmic-override={overrides.heroInfo}
               hasGap={true}
-              className={classNames(projectcss.all, sty.heroInfoWrapper)}
+              className={classNames(projectcss.all, sty.heroInfo)}
             >
-              <div
-                data-plasmic-name={"heroInfoRow"}
-                data-plasmic-override={overrides.heroInfoRow}
-                className={classNames(projectcss.all, sty.heroInfoRow)}
+              <p.Stack
+                as={"div"}
+                data-plasmic-name={"heroInfoContainer"}
+                data-plasmic-override={overrides.heroInfoContainer}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.heroInfoContainer)}
               >
                 {true ? (
                   <p.Stack
@@ -420,9 +374,11 @@ function PlasmicHomepage__RenderFunc(props) {
                       data-plasmic-override={overrides.heroInfoTitle}
                       className={classNames(projectcss.all, sty.heroInfoTitle)}
                     >
-                      <div
+                      <p.Stack
+                        as={"div"}
                         data-plasmic-name={"heroInfoTitleText"}
                         data-plasmic-override={overrides.heroInfoTitleText}
+                        hasGap={true}
                         className={classNames(
                           projectcss.all,
                           sty.heroInfoTitleText
@@ -435,7 +391,9 @@ function PlasmicHomepage__RenderFunc(props) {
                             sty.text__bXamo
                           )}
                         >
-                          {"Top Quality Service Is On The Horizon"}
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? "Top Quality Service \nis on the Horizon"
+                            : "Top Quality Service Is On The Horizon"}
                         </div>
 
                         <div
@@ -447,12 +405,14 @@ function PlasmicHomepage__RenderFunc(props) {
                         >
                           {"We’re ready to assist you"}
                         </div>
-                      </div>
+                      </p.Stack>
                     </div>
 
-                    <div
+                    <p.Stack
+                      as={"div"}
                       data-plasmic-name={"heroInfoBody"}
                       data-plasmic-override={overrides.heroInfoBody}
+                      hasGap={true}
                       className={classNames(projectcss.all, sty.heroInfoBody)}
                     >
                       <div
@@ -524,7 +484,7 @@ function PlasmicHomepage__RenderFunc(props) {
                           </Button>
                         </p.Stack>
                       ) : null}
-                    </div>
+                    </p.Stack>
                   </p.Stack>
                 ) : null}
 
@@ -598,97 +558,219 @@ function PlasmicHomepage__RenderFunc(props) {
                     ) : null}
                   </form>
 
-                  <p.Stack
-                    as={"div"}
-                    data-plasmic-name={"heroInfoAsideBottom"}
-                    data-plasmic-override={overrides.heroInfoAsideBottom}
-                    hasGap={true}
+                  {true ? (
+                    <p.Stack
+                      as={"div"}
+                      data-plasmic-name={"heroInfoAsideBottom"}
+                      data-plasmic-override={overrides.heroInfoAsideBottom}
+                      hasGap={true}
+                      className={classNames(
+                        projectcss.all,
+                        sty.heroInfoAsideBottom
+                      )}
+                    >
+                      {true ? (
+                        <div
+                          data-plasmic-name={"heroInfoAsideMap"}
+                          data-plasmic-override={overrides.heroInfoAsideMap}
+                          className={classNames(
+                            projectcss.all,
+                            sty.heroInfoAsideMap
+                          )}
+                        />
+                      ) : null}
+                      {true ? (
+                        <div
+                          data-plasmic-name={"heroInfoAsideMapinfo"}
+                          data-plasmic-override={overrides.heroInfoAsideMapinfo}
+                          className={classNames(
+                            projectcss.all,
+                            sty.heroInfoAsideMapinfo
+                          )}
+                        >
+                          {true ? (
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"heroInfoAsideMaptext"}
+                              data-plasmic-override={
+                                overrides.heroInfoAsideMaptext
+                              }
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.heroInfoAsideMaptext
+                              )}
+                            >
+                              <div
+                                data-plasmic-name={"heroInfoAsideMaptext1"}
+                                data-plasmic-override={
+                                  overrides.heroInfoAsideMaptext1
+                                }
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.heroInfoAsideMaptext1
+                                )}
+                              >
+                                {"Horizon Development Realty"}
+                              </div>
+
+                              <div
+                                data-plasmic-name={"heroInfoAsideMaptext12"}
+                                data-plasmic-override={
+                                  overrides.heroInfoAsideMaptext12
+                                }
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.heroInfoAsideMaptext12
+                                )}
+                              >
+                                {"218-14 Northern Blvd \nBayside, NY 11364"}
+                              </div>
+
+                              <div
+                                data-plasmic-name={"heroInfoAsideMaptext13"}
+                                data-plasmic-override={
+                                  overrides.heroInfoAsideMaptext13
+                                }
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.heroInfoAsideMaptext13
+                                )}
+                              >
+                                {"(917)-454-8392"}
+                              </div>
+                            </p.Stack>
+                          ) : null}
+                        </div>
+                      ) : null}
+                    </p.Stack>
+                  ) : null}
+                </p.Stack>
+              </p.Stack>
+            </p.Stack>
+
+            <div
+              data-plasmic-name={"communities"}
+              data-plasmic-override={overrides.communities}
+              className={classNames(projectcss.all, sty.communities)}
+            >
+              <p.Stack
+                as={"div"}
+                data-plasmic-name={"communitiesContainer"}
+                data-plasmic-override={overrides.communitiesContainer}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.communitiesContainer)}
+              >
+                <div
+                  data-plasmic-name={"communitiesHeader"}
+                  data-plasmic-override={overrides.communitiesHeader}
+                  className={classNames(projectcss.all, sty.communitiesHeader)}
+                >
+                  <div
+                    data-plasmic-name={"heroInfoTitleText2"}
+                    data-plasmic-override={overrides.heroInfoTitleText2}
                     className={classNames(
                       projectcss.all,
-                      sty.heroInfoAsideBottom
+                      sty.heroInfoTitleText2
                     )}
                   >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__f63PQ
+                      )}
+                    >
+                      {"Communities"}
+                    </div>
+                  </div>
+                </div>
+
+                <p.Stack
+                  as={"div"}
+                  data-plasmic-name={"communitiesBody"}
+                  data-plasmic-override={overrides.communitiesBody}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.communitiesBody)}
+                >
+                  <p.Stack
+                    as={"div"}
+                    data-plasmic-name={"communitiesRow"}
+                    data-plasmic-override={overrides.communitiesRow}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.communitiesRow)}
+                  >
                     {true ? (
-                      <div
-                        data-plasmic-name={"heroInfoAsideMap"}
-                        data-plasmic-override={overrides.heroInfoAsideMap}
+                      <CommunitiesCard
                         className={classNames(
-                          projectcss.all,
-                          sty.heroInfoAsideMap
+                          "__wab_instance",
+                          sty.communitiesCard___55Sd0
                         )}
                       />
                     ) : null}
                     {true ? (
-                      <div
-                        data-plasmic-name={"heroInfoAsideMapinfo"}
-                        data-plasmic-override={overrides.heroInfoAsideMapinfo}
+                      <CommunitiesCard
                         className={classNames(
-                          projectcss.all,
-                          sty.heroInfoAsideMapinfo
+                          "__wab_instance",
+                          sty.communitiesCard__dS7Cj
                         )}
-                      >
-                        {true ? (
-                          <p.Stack
-                            as={"div"}
-                            data-plasmic-name={"heroInfoAsideMaptext"}
-                            data-plasmic-override={
-                              overrides.heroInfoAsideMaptext
-                            }
-                            hasGap={true}
-                            className={classNames(
-                              projectcss.all,
-                              sty.heroInfoAsideMaptext
-                            )}
-                          >
-                            <div
-                              data-plasmic-name={"heroInfoAsideMaptext1"}
-                              data-plasmic-override={
-                                overrides.heroInfoAsideMaptext1
-                              }
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.heroInfoAsideMaptext1
-                              )}
-                            >
-                              {"Horizon Development Realty"}
-                            </div>
-
-                            <div
-                              data-plasmic-name={"heroInfoAsideMaptext12"}
-                              data-plasmic-override={
-                                overrides.heroInfoAsideMaptext12
-                              }
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.heroInfoAsideMaptext12
-                              )}
-                            >
-                              {"218-14 Northern Blvd \nBayside, NY 11364"}
-                            </div>
-
-                            <div
-                              data-plasmic-name={"heroInfoAsideMaptext13"}
-                              data-plasmic-override={
-                                overrides.heroInfoAsideMaptext13
-                              }
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.heroInfoAsideMaptext13
-                              )}
-                            >
-                              {"(917)-454-8392"}
-                            </div>
-                          </p.Stack>
-                        ) : null}
-                      </div>
+                        communitiesCardLabel={"Queens"}
+                      />
+                    ) : null}
+                    {true ? (
+                      <CommunitiesCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.communitiesCard__q0W71
+                        )}
+                      />
                     ) : null}
                   </p.Stack>
+
+                  <div
+                    data-plasmic-name={"communitiesRow2"}
+                    data-plasmic-override={overrides.communitiesRow2}
+                    className={classNames(projectcss.all, sty.communitiesRow2)}
+                  >
+                    {true ? (
+                      <CommunitiesCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.communitiesCard__ldGku
+                        )}
+                      />
+                    ) : null}
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <CommunitiesCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.communitiesCard__iodEr
+                        )}
+                      />
+                    ) : null}
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <CommunitiesCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.communitiesCard__z4Hzi
+                        )}
+                      />
+                    ) : null}
+                  </div>
                 </p.Stack>
-              </div>
-            </p.Stack>
+              </p.Stack>
+            </div>
 
             <div
               data-plasmic-name={"testimonials"}
@@ -751,333 +833,397 @@ function PlasmicHomepage__RenderFunc(props) {
                       sty.testimonialsBlock
                     )}
                   >
-                    <div
-                      data-plasmic-name={"testimonial3"}
-                      data-plasmic-override={overrides.testimonial3}
-                      className={classNames(projectcss.all, sty.testimonial3)}
-                    >
+                    <TestimonialTop
+                      className={classNames(
+                        "__wab_instance",
+                        sty.testimonialTop__oInM
+                      )}
+                    />
+
+                    <TestimonialBottom
+                      data-plasmic-name={"testimonialBottom"}
+                      data-plasmic-override={overrides.testimonialBottom}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.testimonialBottom
+                      )}
+                    />
+
+                    <TestimonialTop
+                      className={classNames(
+                        "__wab_instance",
+                        sty.testimonialTop__saoAz
+                      )}
+                    />
+
+                    {true ? (
                       <div
-                        data-plasmic-name={"quotation3"}
-                        data-plasmic-override={overrides.quotation3}
-                        className={classNames(projectcss.all, sty.quotation3)}
+                        data-plasmic-name={"testimonial5"}
+                        data-plasmic-override={overrides.testimonial5}
+                        className={classNames(projectcss.all, sty.testimonial5)}
                       >
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__wi3Gs
-                          )}
-                        >
-                          {"”"}
-                        </div>
-                      </div>
-
-                      {true ? (
-                        <p.Stack
-                          as={"div"}
-                          data-plasmic-name={"testimonialBottom"}
-                          data-plasmic-override={overrides.testimonialBottom}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.testimonialBottom
-                          )}
+                          data-plasmic-name={"quotation5"}
+                          data-plasmic-override={overrides.quotation5}
+                          className={classNames(projectcss.all, sty.quotation5)}
                         >
                           <div
-                            data-plasmic-name={"quote3"}
-                            data-plasmic-override={overrides.quote3}
-                            className={classNames(projectcss.all, sty.quote3)}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__wy4NH
+                            )}
                           >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__xtYch
-                              )}
-                            >
-                              {
-                                "The folks at Horizon Development\nhelped me every step of the way in buying my first home. They negotiated on my behalf to lower the final buying price and I couldn’t be happier. I’d highly recommend their services to anyone looking to buy a home in New York."
-                              }
-                            </div>
+                            {"”"}
                           </div>
+                        </div>
 
-                          <div
-                            data-plasmic-name={"profile3"}
-                            data-plasmic-override={overrides.profile3}
-                            className={classNames(projectcss.all, sty.profile3)}
+                        {true ? (
+                          <p.Stack
+                            as={"div"}
+                            data-plasmic-name={"testimonialBottom3"}
+                            data-plasmic-override={overrides.testimonialBottom3}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.testimonialBottom3
+                            )}
                           >
-                            <p.Stack
-                              as={"div"}
-                              data-plasmic-name={"profileInfo3"}
-                              data-plasmic-override={overrides.profileInfo3}
-                              hasGap={true}
-                              className={classNames(
-                                projectcss.all,
-                                sty.profileInfo3
-                              )}
+                            <div
+                              data-plasmic-name={"quote2"}
+                              data-plasmic-override={overrides.quote2}
+                              className={classNames(projectcss.all, sty.quote2)}
                             >
                               <div
                                 className={classNames(
                                   projectcss.all,
                                   projectcss.__wab_text,
-                                  sty.text__sB7
+                                  sty.text__uhrGr
                                 )}
                               >
-                                {"Alan Durant"}
+                                {
+                                  "The folks at Horizon Development\nhelped me every step of the way in buying my first home. They negotiated on my behalf to lower the final buying price and I couldn’t be happier. I’d highly recommend their services to anyone looking to buy a home in New York."
+                                }
                               </div>
-
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__stfaB
-                                )}
-                              >
-                                {"Home Buyer from Syosset"}
-                              </div>
-                            </p.Stack>
+                            </div>
 
                             <div
-                              data-plasmic-name={"profileImg3"}
-                              data-plasmic-override={overrides.profileImg3}
+                              data-plasmic-name={"testimonialProfile3"}
+                              data-plasmic-override={
+                                overrides.testimonialProfile3
+                              }
                               className={classNames(
                                 projectcss.all,
-                                sty.profileImg3
+                                sty.testimonialProfile3
                               )}
                             >
                               <div
-                                data-plasmic-name={"b1Hs2QbYbAs2"}
-                                data-plasmic-override={overrides.b1Hs2QbYbAs2}
+                                data-plasmic-name={"profileImg3"}
+                                data-plasmic-override={overrides.profileImg3}
                                 className={classNames(
                                   projectcss.all,
-                                  sty.b1Hs2QbYbAs2
+                                  sty.profileImg3
                                 )}
                               />
-                            </div>
-                          </div>
-                        </p.Stack>
-                      ) : null}
-                    </div>
 
-                    <div
-                      data-plasmic-name={"testimonial4"}
-                      data-plasmic-override={overrides.testimonial4}
-                      className={classNames(projectcss.all, sty.testimonial4)}
-                    >
+                              <p.Stack
+                                as={"div"}
+                                data-plasmic-name={"profileInfo3"}
+                                data-plasmic-override={overrides.profileInfo3}
+                                hasGap={true}
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.profileInfo3
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__gWoLz
+                                  )}
+                                >
+                                  {"Sharon Lee"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text___39AtN
+                                  )}
+                                >
+                                  {"Home Buyer from Flushing"}
+                                </div>
+                              </p.Stack>
+                            </div>
+                          </p.Stack>
+                        ) : null}
+                      </div>
+                    ) : null}
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
                       <div
-                        data-plasmic-name={"quotation4"}
-                        data-plasmic-override={overrides.quotation4}
-                        className={classNames(projectcss.all, sty.quotation4)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__snN5L
-                          )}
-                        >
-                          {"”"}
-                        </div>
-                      </div>
-
-                      {true ? (
-                        <p.Stack
-                          as={"div"}
-                          data-plasmic-name={"testimonialBottom2"}
-                          data-plasmic-override={overrides.testimonialBottom2}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.testimonialBottom2
-                          )}
-                        >
-                          <div
-                            data-plasmic-name={"quote4"}
-                            data-plasmic-override={overrides.quote4}
-                            className={classNames(projectcss.all, sty.quote4)}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text___0R67J
-                              )}
-                            >
-                              {
-                                "I want to thank agent Chouhan and his team for the excellent services they provided for me and my family through the entire process of selling my home. They are professionals in real estate with the highest quality in Queens!"
-                              }
-                            </div>
-                          </div>
-
-                          <div
-                            data-plasmic-name={"profile4"}
-                            data-plasmic-override={overrides.profile4}
-                            className={classNames(projectcss.all, sty.profile4)}
-                          >
-                            <p.Stack
-                              as={"div"}
-                              data-plasmic-name={"profileInfo4"}
-                              data-plasmic-override={overrides.profileInfo4}
-                              hasGap={true}
-                              className={classNames(
-                                projectcss.all,
-                                sty.profileInfo4
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__k0JTg
-                                )}
-                              >
-                                {"Alan Durant"}
-                              </div>
-
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text___75AlV
-                                )}
-                              >
-                                {"Home Buyer from Syosset"}
-                              </div>
-                            </p.Stack>
-
-                            <div
-                              data-plasmic-name={"profileImg4"}
-                              data-plasmic-override={overrides.profileImg4}
-                              className={classNames(
-                                projectcss.all,
-                                sty.profileImg4
-                              )}
-                            >
-                              <div
-                                data-plasmic-name={"b1Hs2QbYbAs3"}
-                                data-plasmic-override={overrides.b1Hs2QbYbAs3}
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.b1Hs2QbYbAs3
-                                )}
-                              />
-                            </div>
-                          </div>
-                        </p.Stack>
-                      ) : null}
-                    </div>
-
-                    <div
-                      data-plasmic-name={"testimonial5"}
-                      data-plasmic-override={overrides.testimonial5}
-                      className={classNames(projectcss.all, sty.testimonial5)}
-                    >
-                      <div
-                        data-plasmic-name={"quotation5"}
-                        data-plasmic-override={overrides.quotation5}
-                        className={classNames(projectcss.all, sty.quotation5)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___57CiM
-                          )}
-                        >
-                          {"”"}
-                        </div>
-                      </div>
-
-                      {true ? (
-                        <p.Stack
-                          as={"div"}
-                          data-plasmic-name={"testimonialBottom3"}
-                          data-plasmic-override={overrides.testimonialBottom3}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.testimonialBottom3
-                          )}
-                        >
-                          <div
-                            data-plasmic-name={"quote5"}
-                            data-plasmic-override={overrides.quote5}
-                            className={classNames(projectcss.all, sty.quote5)}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__sFSu6
-                              )}
-                            >
-                              {
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dictum et ligula non facilisis. Maecenas ultricies facilisis turpis vitae fringilla. Suspendisse pharetra facilisis turpis eget tincidunt. Cras laoreet nunc et nisi auctor condimentum."
-                              }
-                            </div>
-                          </div>
-
-                          <div
-                            data-plasmic-name={"profile5"}
-                            data-plasmic-override={overrides.profile5}
-                            className={classNames(projectcss.all, sty.profile5)}
-                          >
-                            <p.Stack
-                              as={"div"}
-                              data-plasmic-name={"profileInfo5"}
-                              data-plasmic-override={overrides.profileInfo5}
-                              hasGap={true}
-                              className={classNames(
-                                projectcss.all,
-                                sty.profileInfo5
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__gatgF
-                                )}
-                              >
-                                {"Alan Durant"}
-                              </div>
-
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text___6LOj7
-                                )}
-                              >
-                                {"Home Buyer from Syosset"}
-                              </div>
-                            </p.Stack>
-
-                            <div
-                              data-plasmic-name={"profileImg5"}
-                              data-plasmic-override={overrides.profileImg5}
-                              className={classNames(
-                                projectcss.all,
-                                sty.profileImg5
-                              )}
-                            >
-                              <div
-                                data-plasmic-name={"b1Hs2QbYbAs4"}
-                                data-plasmic-override={overrides.b1Hs2QbYbAs4}
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.b1Hs2QbYbAs4
-                                )}
-                              />
-                            </div>
-                          </div>
-                        </p.Stack>
-                      ) : null}
-                    </div>
+                        data-plasmic-name={"testimonialMobilePadding"}
+                        data-plasmic-override={
+                          overrides.testimonialMobilePadding
+                        }
+                        className={classNames(
+                          projectcss.all,
+                          sty.testimonialMobilePadding
+                        )}
+                      />
+                    ) : null}
                   </p.Stack>
                 </p.Stack>
               ) : null}
             </div>
+
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"footer"}
+              data-plasmic-override={overrides.footer}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.footer)}
+            >
+              <p.Stack
+                as={"div"}
+                data-plasmic-name={"footerTitle"}
+                data-plasmic-override={overrides.footerTitle}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.footerTitle)}
+              >
+                <p.PlasmicImg
+                  alt={""}
+                  className={classNames(sty.img__bNz8)}
+                  displayHeight={"37px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"36px"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/blank_project/images/image3.svg",
+                    fullWidth: 145,
+                    fullHeight: 150,
+                    aspectRatio: 0.967742
+                  }}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__eJxvf
+                  )}
+                >
+                  {"Horizon Development"}
+                </div>
+              </p.Stack>
+
+              <p.Stack
+                as={"div"}
+                data-plasmic-name={"footerBody"}
+                data-plasmic-override={overrides.footerBody}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.footerBody)}
+              >
+                <p.Stack
+                  as={"div"}
+                  data-plasmic-name={"footerBodyStart"}
+                  data-plasmic-override={overrides.footerBodyStart}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.footerBodyStart)}
+                >
+                  {true ? (
+                    <div
+                      data-plasmic-name={"footerMap"}
+                      data-plasmic-override={overrides.footerMap}
+                      className={classNames(projectcss.all, sty.footerMap)}
+                    />
+                  ) : null}
+                  {true ? (
+                    <p.Stack
+                      as={"div"}
+                      data-plasmic-name={"footerContact"}
+                      data-plasmic-override={overrides.footerContact}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.footerContact)}
+                    >
+                      <div
+                        data-plasmic-name={"heroInfoAsideMaptext14"}
+                        data-plasmic-override={overrides.heroInfoAsideMaptext14}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.heroInfoAsideMaptext14
+                        )}
+                      >
+                        {
+                          "Horizon Development Realty\n218-14 Northern Blvd \nBayside, NY 11364\n(917)-454-8392"
+                        }
+                      </div>
+                    </p.Stack>
+                  ) : null}
+                </p.Stack>
+
+                <div
+                  data-plasmic-name={"footerBodyMiddle"}
+                  data-plasmic-override={overrides.footerBodyMiddle}
+                  className={classNames(projectcss.all, sty.footerBodyMiddle)}
+                >
+                  {true ? (
+                    <div
+                      data-plasmic-name={"sitemap"}
+                      data-plasmic-override={overrides.sitemap}
+                      className={classNames(projectcss.all, sty.sitemap)}
+                    >
+                      <div
+                        data-plasmic-name={"sitemapTitle"}
+                        data-plasmic-override={overrides.sitemapTitle}
+                        className={classNames(projectcss.all, sty.sitemapTitle)}
+                      >
+                        <h6
+                          data-plasmic-name={"h6"}
+                          data-plasmic-override={overrides.h6}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h6,
+                            projectcss.__wab_text,
+                            sty.h6
+                          )}
+                        >
+                          {"Sitemap"}
+                        </h6>
+                      </div>
+
+                      <div
+                        data-plasmic-name={"sitemapLinks"}
+                        data-plasmic-override={overrides.sitemapLinks}
+                        className={classNames(projectcss.all, sty.sitemapLinks)}
+                      >
+                        <p.PlasmicLink
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            sty.link__ssObz
+                          )}
+                          component={Link}
+                          platform={"nextjs"}
+                        >
+                          {"Communities"}
+                        </p.PlasmicLink>
+
+                        <p.PlasmicLink
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            sty.link__rySMb
+                          )}
+                          component={Link}
+                          platform={"nextjs"}
+                        >
+                          {"Listings"}
+                        </p.PlasmicLink>
+
+                        <p.PlasmicLink
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            sty.link__a0Qjp
+                          )}
+                          component={Link}
+                          platform={"nextjs"}
+                        >
+                          {"Agents"}
+                        </p.PlasmicLink>
+
+                        <p.PlasmicLink
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            sty.link__qW3A
+                          )}
+                          component={Link}
+                          platform={"nextjs"}
+                        >
+                          {"About Us"}
+                        </p.PlasmicLink>
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+
+                <p.Stack
+                  as={"div"}
+                  data-plasmic-name={"footerBodyEnd"}
+                  data-plasmic-override={overrides.footerBodyEnd}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.footerBodyEnd)}
+                >
+                  <div
+                    data-plasmic-name={"footerEho"}
+                    data-plasmic-override={overrides.footerEho}
+                    className={classNames(projectcss.all, sty.footerEho)}
+                  >
+                    <Icon4Icon
+                      data-plasmic-name={"ehoLogo"}
+                      data-plasmic-override={overrides.ehoLogo}
+                      className={classNames(projectcss.all, sty.ehoLogo)}
+                      role={"img"}
+                    />
+                  </div>
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__tq1CH)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__au8R4
+                      )}
+                    >
+                      {
+                        "We support the Fair Housing Act.\nWe pledge to provide equal opportunity for housing to any prospective customer or client, without regard to race, color, religion, sex, handicap, familial status or national origin."
+                      }
+                    </div>
+                  </div>
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__c1Os3)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ougqi
+                      )}
+                    >
+                      {"© 2022 Horizon Development New York"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__vuHhi
+                      )}
+                    >
+                      {"All Rights Reserved"}
+                    </div>
+                  </div>
+                </p.Stack>
+              </p.Stack>
+            </p.Stack>
           </div>
         </p.Stack>
       </div>
@@ -1088,17 +1234,10 @@ function PlasmicHomepage__RenderFunc(props) {
 const PlasmicDescendants = {
   root: [
     "root",
-    "home2Desktop",
-    "heroContainer",
+    "wrapper",
+    "hero",
     "navbar",
-    "logoContainer",
-    "textLogo",
-    "navLinksContainer",
-    "navLinks",
-    "link2",
-    "link3",
-    "link4",
-    "phoneLink",
+    "mobileMenuIcon",
     "svg",
     "heroText",
     "heroTextPrimary",
@@ -1106,12 +1245,13 @@ const PlasmicDescendants = {
     "horizonDevelopmentHasHelpedNewYorkersFindAHomeTheyLoveWeGuaranteeThatWellFindSomethingGreatForYou",
     "heroBtn",
     "button",
+    "heroMobileGradient",
     "recentListings",
     "recentListingsContainer",
     "recentListingsHeader",
     "recentListingsBlock",
-    "heroInfoWrapper",
-    "heroInfoRow",
+    "heroInfo",
+    "heroInfoContainer",
     "heroInfoMain",
     "heroInfoTitle",
     "heroInfoTitleText",
@@ -1133,50 +1273,50 @@ const PlasmicDescendants = {
     "heroInfoAsideMaptext1",
     "heroInfoAsideMaptext12",
     "heroInfoAsideMaptext13",
+    "communities",
+    "communitiesContainer",
+    "communitiesHeader",
+    "heroInfoTitleText2",
+    "communitiesBody",
+    "communitiesRow",
+    "communitiesRow2",
     "testimonials",
     "testimonialsContainer",
     "testimonialsHeader",
     "testimonialsTitle",
     "testimonialsText",
     "testimonialsBlock",
-    "testimonial3",
-    "quotation3",
     "testimonialBottom",
-    "quote3",
-    "profile3",
-    "profileInfo3",
-    "profileImg3",
-    "b1Hs2QbYbAs2",
-    "testimonial4",
-    "quotation4",
-    "testimonialBottom2",
-    "quote4",
-    "profile4",
-    "profileInfo4",
-    "profileImg4",
-    "b1Hs2QbYbAs3",
     "testimonial5",
     "quotation5",
     "testimonialBottom3",
-    "quote5",
-    "profile5",
-    "profileInfo5",
-    "profileImg5",
-    "b1Hs2QbYbAs4"
+    "quote2",
+    "testimonialProfile3",
+    "profileImg3",
+    "profileInfo3",
+    "testimonialMobilePadding",
+    "footer",
+    "footerTitle",
+    "footerBody",
+    "footerBodyStart",
+    "footerMap",
+    "footerContact",
+    "heroInfoAsideMaptext14",
+    "footerBodyMiddle",
+    "sitemap",
+    "sitemapTitle",
+    "h6",
+    "sitemapLinks",
+    "footerBodyEnd",
+    "footerEho",
+    "ehoLogo"
   ],
 
-  home2Desktop: [
-    "home2Desktop",
-    "heroContainer",
+  wrapper: [
+    "wrapper",
+    "hero",
     "navbar",
-    "logoContainer",
-    "textLogo",
-    "navLinksContainer",
-    "navLinks",
-    "link2",
-    "link3",
-    "link4",
-    "phoneLink",
+    "mobileMenuIcon",
     "svg",
     "heroText",
     "heroTextPrimary",
@@ -1184,12 +1324,13 @@ const PlasmicDescendants = {
     "horizonDevelopmentHasHelpedNewYorkersFindAHomeTheyLoveWeGuaranteeThatWellFindSomethingGreatForYou",
     "heroBtn",
     "button",
+    "heroMobileGradient",
     "recentListings",
     "recentListingsContainer",
     "recentListingsHeader",
     "recentListingsBlock",
-    "heroInfoWrapper",
-    "heroInfoRow",
+    "heroInfo",
+    "heroInfoContainer",
     "heroInfoMain",
     "heroInfoTitle",
     "heroInfoTitleText",
@@ -1211,86 +1352,61 @@ const PlasmicDescendants = {
     "heroInfoAsideMaptext1",
     "heroInfoAsideMaptext12",
     "heroInfoAsideMaptext13",
+    "communities",
+    "communitiesContainer",
+    "communitiesHeader",
+    "heroInfoTitleText2",
+    "communitiesBody",
+    "communitiesRow",
+    "communitiesRow2",
     "testimonials",
     "testimonialsContainer",
     "testimonialsHeader",
     "testimonialsTitle",
     "testimonialsText",
     "testimonialsBlock",
-    "testimonial3",
-    "quotation3",
     "testimonialBottom",
-    "quote3",
-    "profile3",
-    "profileInfo3",
-    "profileImg3",
-    "b1Hs2QbYbAs2",
-    "testimonial4",
-    "quotation4",
-    "testimonialBottom2",
-    "quote4",
-    "profile4",
-    "profileInfo4",
-    "profileImg4",
-    "b1Hs2QbYbAs3",
     "testimonial5",
     "quotation5",
     "testimonialBottom3",
-    "quote5",
-    "profile5",
-    "profileInfo5",
-    "profileImg5",
-    "b1Hs2QbYbAs4"
+    "quote2",
+    "testimonialProfile3",
+    "profileImg3",
+    "profileInfo3",
+    "testimonialMobilePadding",
+    "footer",
+    "footerTitle",
+    "footerBody",
+    "footerBodyStart",
+    "footerMap",
+    "footerContact",
+    "heroInfoAsideMaptext14",
+    "footerBodyMiddle",
+    "sitemap",
+    "sitemapTitle",
+    "h6",
+    "sitemapLinks",
+    "footerBodyEnd",
+    "footerEho",
+    "ehoLogo"
   ],
 
-  heroContainer: [
-    "heroContainer",
+  hero: [
+    "hero",
     "navbar",
-    "logoContainer",
-    "textLogo",
-    "navLinksContainer",
-    "navLinks",
-    "link2",
-    "link3",
-    "link4",
-    "phoneLink",
+    "mobileMenuIcon",
     "svg",
     "heroText",
     "heroTextPrimary",
     "heroTextSm",
     "horizonDevelopmentHasHelpedNewYorkersFindAHomeTheyLoveWeGuaranteeThatWellFindSomethingGreatForYou",
     "heroBtn",
-    "button"
+    "button",
+    "heroMobileGradient"
   ],
 
-  navbar: [
-    "navbar",
-    "logoContainer",
-    "textLogo",
-    "navLinksContainer",
-    "navLinks",
-    "link2",
-    "link3",
-    "link4",
-    "phoneLink",
-    "svg"
-  ],
-
-  logoContainer: ["logoContainer", "textLogo"],
-  textLogo: ["textLogo"],
-  navLinksContainer: [
-    "navLinksContainer",
-    "navLinks",
-    "link2",
-    "link3",
-    "link4"
-  ],
-
-  navLinks: ["navLinks", "link2", "link3", "link4"],
-  link2: ["link2"],
-  link3: ["link3"],
-  link4: ["link4"],
-  phoneLink: ["phoneLink", "svg"],
+  navbar: ["navbar"],
+  mobileMenuIcon: ["mobileMenuIcon", "svg"],
   svg: ["svg"],
   heroText: [
     "heroText",
@@ -1314,6 +1430,7 @@ const PlasmicDescendants = {
 
   heroBtn: ["heroBtn", "button"],
   button: ["button"],
+  heroMobileGradient: ["heroMobileGradient"],
   recentListings: [
     "recentListings",
     "recentListingsContainer",
@@ -1329,9 +1446,9 @@ const PlasmicDescendants = {
 
   recentListingsHeader: ["recentListingsHeader"],
   recentListingsBlock: ["recentListingsBlock"],
-  heroInfoWrapper: [
-    "heroInfoWrapper",
-    "heroInfoRow",
+  heroInfo: [
+    "heroInfo",
+    "heroInfoContainer",
     "heroInfoMain",
     "heroInfoTitle",
     "heroInfoTitleText",
@@ -1355,8 +1472,8 @@ const PlasmicDescendants = {
     "heroInfoAsideMaptext13"
   ],
 
-  heroInfoRow: [
-    "heroInfoRow",
+  heroInfoContainer: [
+    "heroInfoContainer",
     "heroInfoMain",
     "heroInfoTitle",
     "heroInfoTitleText",
@@ -1471,6 +1588,30 @@ const PlasmicDescendants = {
   heroInfoAsideMaptext1: ["heroInfoAsideMaptext1"],
   heroInfoAsideMaptext12: ["heroInfoAsideMaptext12"],
   heroInfoAsideMaptext13: ["heroInfoAsideMaptext13"],
+  communities: [
+    "communities",
+    "communitiesContainer",
+    "communitiesHeader",
+    "heroInfoTitleText2",
+    "communitiesBody",
+    "communitiesRow",
+    "communitiesRow2"
+  ],
+
+  communitiesContainer: [
+    "communitiesContainer",
+    "communitiesHeader",
+    "heroInfoTitleText2",
+    "communitiesBody",
+    "communitiesRow",
+    "communitiesRow2"
+  ],
+
+  communitiesHeader: ["communitiesHeader", "heroInfoTitleText2"],
+  heroInfoTitleText2: ["heroInfoTitleText2"],
+  communitiesBody: ["communitiesBody", "communitiesRow", "communitiesRow2"],
+  communitiesRow: ["communitiesRow"],
+  communitiesRow2: ["communitiesRow2"],
   testimonials: [
     "testimonials",
     "testimonialsContainer",
@@ -1478,30 +1619,15 @@ const PlasmicDescendants = {
     "testimonialsTitle",
     "testimonialsText",
     "testimonialsBlock",
-    "testimonial3",
-    "quotation3",
     "testimonialBottom",
-    "quote3",
-    "profile3",
-    "profileInfo3",
-    "profileImg3",
-    "b1Hs2QbYbAs2",
-    "testimonial4",
-    "quotation4",
-    "testimonialBottom2",
-    "quote4",
-    "profile4",
-    "profileInfo4",
-    "profileImg4",
-    "b1Hs2QbYbAs3",
     "testimonial5",
     "quotation5",
     "testimonialBottom3",
-    "quote5",
-    "profile5",
-    "profileInfo5",
-    "profileImg5",
-    "b1Hs2QbYbAs4"
+    "quote2",
+    "testimonialProfile3",
+    "profileImg3",
+    "profileInfo3",
+    "testimonialMobilePadding"
   ],
 
   testimonialsContainer: [
@@ -1510,30 +1636,15 @@ const PlasmicDescendants = {
     "testimonialsTitle",
     "testimonialsText",
     "testimonialsBlock",
-    "testimonial3",
-    "quotation3",
     "testimonialBottom",
-    "quote3",
-    "profile3",
-    "profileInfo3",
-    "profileImg3",
-    "b1Hs2QbYbAs2",
-    "testimonial4",
-    "quotation4",
-    "testimonialBottom2",
-    "quote4",
-    "profile4",
-    "profileInfo4",
-    "profileImg4",
-    "b1Hs2QbYbAs3",
     "testimonial5",
     "quotation5",
     "testimonialBottom3",
-    "quote5",
-    "profile5",
-    "profileInfo5",
-    "profileImg5",
-    "b1Hs2QbYbAs4"
+    "quote2",
+    "testimonialProfile3",
+    "profileImg3",
+    "profileInfo3",
+    "testimonialMobilePadding"
   ],
 
   testimonialsHeader: [
@@ -1546,110 +1657,102 @@ const PlasmicDescendants = {
   testimonialsText: ["testimonialsText"],
   testimonialsBlock: [
     "testimonialsBlock",
-    "testimonial3",
-    "quotation3",
     "testimonialBottom",
-    "quote3",
-    "profile3",
-    "profileInfo3",
-    "profileImg3",
-    "b1Hs2QbYbAs2",
-    "testimonial4",
-    "quotation4",
-    "testimonialBottom2",
-    "quote4",
-    "profile4",
-    "profileInfo4",
-    "profileImg4",
-    "b1Hs2QbYbAs3",
     "testimonial5",
     "quotation5",
     "testimonialBottom3",
-    "quote5",
-    "profile5",
-    "profileInfo5",
-    "profileImg5",
-    "b1Hs2QbYbAs4"
-  ],
-
-  testimonial3: [
-    "testimonial3",
-    "quotation3",
-    "testimonialBottom",
-    "quote3",
-    "profile3",
-    "profileInfo3",
+    "quote2",
+    "testimonialProfile3",
     "profileImg3",
-    "b1Hs2QbYbAs2"
-  ],
-
-  quotation3: ["quotation3"],
-  testimonialBottom: [
-    "testimonialBottom",
-    "quote3",
-    "profile3",
     "profileInfo3",
-    "profileImg3",
-    "b1Hs2QbYbAs2"
+    "testimonialMobilePadding"
   ],
 
-  quote3: ["quote3"],
-  profile3: ["profile3", "profileInfo3", "profileImg3", "b1Hs2QbYbAs2"],
-  profileInfo3: ["profileInfo3"],
-  profileImg3: ["profileImg3", "b1Hs2QbYbAs2"],
-  b1Hs2QbYbAs2: ["b1Hs2QbYbAs2"],
-  testimonial4: [
-    "testimonial4",
-    "quotation4",
-    "testimonialBottom2",
-    "quote4",
-    "profile4",
-    "profileInfo4",
-    "profileImg4",
-    "b1Hs2QbYbAs3"
-  ],
-
-  quotation4: ["quotation4"],
-  testimonialBottom2: [
-    "testimonialBottom2",
-    "quote4",
-    "profile4",
-    "profileInfo4",
-    "profileImg4",
-    "b1Hs2QbYbAs3"
-  ],
-
-  quote4: ["quote4"],
-  profile4: ["profile4", "profileInfo4", "profileImg4", "b1Hs2QbYbAs3"],
-  profileInfo4: ["profileInfo4"],
-  profileImg4: ["profileImg4", "b1Hs2QbYbAs3"],
-  b1Hs2QbYbAs3: ["b1Hs2QbYbAs3"],
+  testimonialBottom: ["testimonialBottom"],
   testimonial5: [
     "testimonial5",
     "quotation5",
     "testimonialBottom3",
-    "quote5",
-    "profile5",
-    "profileInfo5",
-    "profileImg5",
-    "b1Hs2QbYbAs4"
+    "quote2",
+    "testimonialProfile3",
+    "profileImg3",
+    "profileInfo3"
   ],
 
   quotation5: ["quotation5"],
   testimonialBottom3: [
     "testimonialBottom3",
-    "quote5",
-    "profile5",
-    "profileInfo5",
-    "profileImg5",
-    "b1Hs2QbYbAs4"
+    "quote2",
+    "testimonialProfile3",
+    "profileImg3",
+    "profileInfo3"
   ],
 
-  quote5: ["quote5"],
-  profile5: ["profile5", "profileInfo5", "profileImg5", "b1Hs2QbYbAs4"],
-  profileInfo5: ["profileInfo5"],
-  profileImg5: ["profileImg5", "b1Hs2QbYbAs4"],
-  b1Hs2QbYbAs4: ["b1Hs2QbYbAs4"]
+  quote2: ["quote2"],
+  testimonialProfile3: ["testimonialProfile3", "profileImg3", "profileInfo3"],
+  profileImg3: ["profileImg3"],
+  profileInfo3: ["profileInfo3"],
+  testimonialMobilePadding: ["testimonialMobilePadding"],
+  footer: [
+    "footer",
+    "footerTitle",
+    "footerBody",
+    "footerBodyStart",
+    "footerMap",
+    "footerContact",
+    "heroInfoAsideMaptext14",
+    "footerBodyMiddle",
+    "sitemap",
+    "sitemapTitle",
+    "h6",
+    "sitemapLinks",
+    "footerBodyEnd",
+    "footerEho",
+    "ehoLogo"
+  ],
+
+  footerTitle: ["footerTitle"],
+  footerBody: [
+    "footerBody",
+    "footerBodyStart",
+    "footerMap",
+    "footerContact",
+    "heroInfoAsideMaptext14",
+    "footerBodyMiddle",
+    "sitemap",
+    "sitemapTitle",
+    "h6",
+    "sitemapLinks",
+    "footerBodyEnd",
+    "footerEho",
+    "ehoLogo"
+  ],
+
+  footerBodyStart: [
+    "footerBodyStart",
+    "footerMap",
+    "footerContact",
+    "heroInfoAsideMaptext14"
+  ],
+
+  footerMap: ["footerMap"],
+  footerContact: ["footerContact", "heroInfoAsideMaptext14"],
+  heroInfoAsideMaptext14: ["heroInfoAsideMaptext14"],
+  footerBodyMiddle: [
+    "footerBodyMiddle",
+    "sitemap",
+    "sitemapTitle",
+    "h6",
+    "sitemapLinks"
+  ],
+
+  sitemap: ["sitemap", "sitemapTitle", "h6", "sitemapLinks"],
+  sitemapTitle: ["sitemapTitle", "h6"],
+  h6: ["h6"],
+  sitemapLinks: ["sitemapLinks"],
+  footerBodyEnd: ["footerBodyEnd", "footerEho", "ehoLogo"],
+  footerEho: ["footerEho", "ehoLogo"],
+  ehoLogo: ["ehoLogo"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -1681,17 +1784,10 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    home2Desktop: makeNodeComponent("home2Desktop"),
-    heroContainer: makeNodeComponent("heroContainer"),
+    wrapper: makeNodeComponent("wrapper"),
+    hero: makeNodeComponent("hero"),
     navbar: makeNodeComponent("navbar"),
-    logoContainer: makeNodeComponent("logoContainer"),
-    textLogo: makeNodeComponent("textLogo"),
-    navLinksContainer: makeNodeComponent("navLinksContainer"),
-    navLinks: makeNodeComponent("navLinks"),
-    link2: makeNodeComponent("link2"),
-    link3: makeNodeComponent("link3"),
-    link4: makeNodeComponent("link4"),
-    phoneLink: makeNodeComponent("phoneLink"),
+    mobileMenuIcon: makeNodeComponent("mobileMenuIcon"),
     svg: makeNodeComponent("svg"),
     heroText: makeNodeComponent("heroText"),
     heroTextPrimary: makeNodeComponent("heroTextPrimary"),
@@ -1703,12 +1799,13 @@ export const PlasmicHomepage = Object.assign(
 
     heroBtn: makeNodeComponent("heroBtn"),
     button: makeNodeComponent("button"),
+    heroMobileGradient: makeNodeComponent("heroMobileGradient"),
     recentListings: makeNodeComponent("recentListings"),
     recentListingsContainer: makeNodeComponent("recentListingsContainer"),
     recentListingsHeader: makeNodeComponent("recentListingsHeader"),
     recentListingsBlock: makeNodeComponent("recentListingsBlock"),
-    heroInfoWrapper: makeNodeComponent("heroInfoWrapper"),
-    heroInfoRow: makeNodeComponent("heroInfoRow"),
+    heroInfo: makeNodeComponent("heroInfo"),
+    heroInfoContainer: makeNodeComponent("heroInfoContainer"),
     heroInfoMain: makeNodeComponent("heroInfoMain"),
     heroInfoTitle: makeNodeComponent("heroInfoTitle"),
     heroInfoTitleText: makeNodeComponent("heroInfoTitleText"),
@@ -1730,36 +1827,43 @@ export const PlasmicHomepage = Object.assign(
     heroInfoAsideMaptext1: makeNodeComponent("heroInfoAsideMaptext1"),
     heroInfoAsideMaptext12: makeNodeComponent("heroInfoAsideMaptext12"),
     heroInfoAsideMaptext13: makeNodeComponent("heroInfoAsideMaptext13"),
+    communities: makeNodeComponent("communities"),
+    communitiesContainer: makeNodeComponent("communitiesContainer"),
+    communitiesHeader: makeNodeComponent("communitiesHeader"),
+    heroInfoTitleText2: makeNodeComponent("heroInfoTitleText2"),
+    communitiesBody: makeNodeComponent("communitiesBody"),
+    communitiesRow: makeNodeComponent("communitiesRow"),
+    communitiesRow2: makeNodeComponent("communitiesRow2"),
     testimonials: makeNodeComponent("testimonials"),
     testimonialsContainer: makeNodeComponent("testimonialsContainer"),
     testimonialsHeader: makeNodeComponent("testimonialsHeader"),
     testimonialsTitle: makeNodeComponent("testimonialsTitle"),
     testimonialsText: makeNodeComponent("testimonialsText"),
     testimonialsBlock: makeNodeComponent("testimonialsBlock"),
-    testimonial3: makeNodeComponent("testimonial3"),
-    quotation3: makeNodeComponent("quotation3"),
     testimonialBottom: makeNodeComponent("testimonialBottom"),
-    quote3: makeNodeComponent("quote3"),
-    profile3: makeNodeComponent("profile3"),
-    profileInfo3: makeNodeComponent("profileInfo3"),
-    profileImg3: makeNodeComponent("profileImg3"),
-    b1Hs2QbYbAs2: makeNodeComponent("b1Hs2QbYbAs2"),
-    testimonial4: makeNodeComponent("testimonial4"),
-    quotation4: makeNodeComponent("quotation4"),
-    testimonialBottom2: makeNodeComponent("testimonialBottom2"),
-    quote4: makeNodeComponent("quote4"),
-    profile4: makeNodeComponent("profile4"),
-    profileInfo4: makeNodeComponent("profileInfo4"),
-    profileImg4: makeNodeComponent("profileImg4"),
-    b1Hs2QbYbAs3: makeNodeComponent("b1Hs2QbYbAs3"),
     testimonial5: makeNodeComponent("testimonial5"),
     quotation5: makeNodeComponent("quotation5"),
     testimonialBottom3: makeNodeComponent("testimonialBottom3"),
-    quote5: makeNodeComponent("quote5"),
-    profile5: makeNodeComponent("profile5"),
-    profileInfo5: makeNodeComponent("profileInfo5"),
-    profileImg5: makeNodeComponent("profileImg5"),
-    b1Hs2QbYbAs4: makeNodeComponent("b1Hs2QbYbAs4"),
+    quote2: makeNodeComponent("quote2"),
+    testimonialProfile3: makeNodeComponent("testimonialProfile3"),
+    profileImg3: makeNodeComponent("profileImg3"),
+    profileInfo3: makeNodeComponent("profileInfo3"),
+    testimonialMobilePadding: makeNodeComponent("testimonialMobilePadding"),
+    footer: makeNodeComponent("footer"),
+    footerTitle: makeNodeComponent("footerTitle"),
+    footerBody: makeNodeComponent("footerBody"),
+    footerBodyStart: makeNodeComponent("footerBodyStart"),
+    footerMap: makeNodeComponent("footerMap"),
+    footerContact: makeNodeComponent("footerContact"),
+    heroInfoAsideMaptext14: makeNodeComponent("heroInfoAsideMaptext14"),
+    footerBodyMiddle: makeNodeComponent("footerBodyMiddle"),
+    sitemap: makeNodeComponent("sitemap"),
+    sitemapTitle: makeNodeComponent("sitemapTitle"),
+    h6: makeNodeComponent("h6"),
+    sitemapLinks: makeNodeComponent("sitemapLinks"),
+    footerBodyEnd: makeNodeComponent("footerBodyEnd"),
+    footerEho: makeNodeComponent("footerEho"),
+    ehoLogo: makeNodeComponent("ehoLogo"),
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
     internalArgProps: PlasmicHomepage__ArgProps

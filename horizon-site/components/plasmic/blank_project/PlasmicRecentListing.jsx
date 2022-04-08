@@ -15,7 +15,6 @@ import {
   createPlasmicElementProxy,
   deriveRenderOpts
 } from "@plasmicapp/react-web";
-import Button from "../../Button"; // plasmic-import: r83GzkdYS5/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_blank_project.module.css"; // plasmic-import: akQUwPYY2eStENCEGYmmQw/projectcss
 import sty from "./PlasmicRecentListing.module.css"; // plasmic-import: w1_vCJeiHk/css
@@ -66,9 +65,10 @@ function PlasmicRecentListing__RenderFunc(props) {
               displayMinWidth={"0"}
               displayWidth={"100%"}
               loading={"lazy"}
-              src={args.imageSrc}
             />
           ),
+
+          value: args.recentListingImg
         })}
       </div>
 
@@ -90,7 +90,7 @@ function PlasmicRecentListing__RenderFunc(props) {
             className={classNames(projectcss.all, sty.price)}
           >
             {p.renderPlasmicSlot({
-              defaultContents: "Price",
+              defaultContents: "$1,000,000",
               value: args.price,
               className: classNames(sty.slotTargetPrice)
             })}
@@ -102,7 +102,7 @@ function PlasmicRecentListing__RenderFunc(props) {
             className={classNames(projectcss.all, sty.address)}
           >
             {p.renderPlasmicSlot({
-              defaultContents: "Address",
+              defaultContents: "50-50 Cloverdale Blvd, Bayside",
               value: args.address,
               className: classNames(sty.slotTargetAddress)
             })}
@@ -114,21 +114,12 @@ function PlasmicRecentListing__RenderFunc(props) {
             className={classNames(projectcss.all, sty.details)}
           >
             {p.renderPlasmicSlot({
-              defaultContents: "Details",
+              defaultContents: "4 Beds / 2 Baths",
               value: args.details,
               className: classNames(sty.slotTargetDetails)
             })}
           </div>
         </p.Stack>
-
-        <Button
-          data-plasmic-name={"recentListingBtn"}
-          data-plasmic-override={overrides.recentListingBtn}
-          className={classNames("__wab_instance", sty.recentListingBtn)}
-          color={["navyDark"]}
-        >
-          {"See More"}
-        </Button>
       </div>
     </p.Stack>
   );
@@ -142,8 +133,7 @@ const PlasmicDescendants = {
     "recentListingInfo",
     "price",
     "address",
-    "details",
-    "recentListingBtn"
+    "details"
   ],
 
   recentListingImgBlock: ["recentListingImgBlock"],
@@ -152,15 +142,13 @@ const PlasmicDescendants = {
     "recentListingInfo",
     "price",
     "address",
-    "details",
-    "recentListingBtn"
+    "details"
   ],
 
   recentListingInfo: ["recentListingInfo", "price", "address", "details"],
   price: ["price"],
   address: ["address"],
-  details: ["details"],
-  recentListingBtn: ["recentListingBtn"]
+  details: ["details"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -198,7 +186,6 @@ export const PlasmicRecentListing = Object.assign(
     price: makeNodeComponent("price"),
     address: makeNodeComponent("address"),
     details: makeNodeComponent("details"),
-    recentListingBtn: makeNodeComponent("recentListingBtn"),
     // Metadata about props expected for PlasmicRecentListing
     internalVariantProps: PlasmicRecentListing__VariantProps,
     internalArgProps: PlasmicRecentListing__ArgProps
